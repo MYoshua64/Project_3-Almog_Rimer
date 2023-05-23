@@ -1,0 +1,21 @@
+html, body, #root {
+    margin: 0px;
+    height: 100%;
+    text-align: center;
+    font-size: x-large;
+    background: linear-gradient(45deg, #7FB77E, #B1D7B4);
+    color: #FFC090;
+    font-family: 'Alkatra', cursive;
+}
+
+a {
+    color: blue;
+}
+
+.Box{
+    border: 1px solid #F7F6DC;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+    display: inline-block;
+}
+

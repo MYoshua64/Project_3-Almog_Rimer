@@ -1,0 +1,51 @@
+.VacationCard > img {
+	width: 100%;
+    height: 200px;
+}
+
+.VacationCard {
+    width: 300px;
+    display: inline-block;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #F7F6DC;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, #7FB77E, #B1D7B4);
+    box-shadow: 10px 10px 10px gray;
+}
+
+.VacationCard > .Description{
+    height: 150px;
+    overflow: auto;
+    font-size: medium;
+}
+
+.VacationCard button{
+    font-family: 'Alkatra', cursive;
+    font-size: large;
+    border-radius: 10px;
+}
+
+.VacationCard > .unfollow{
+    background-color: darkturquoise;
+    border-color: blue;
+}
+
+.ActionBtns{
+    visibility: hidden;
+    position: absolute;
+}
+
+.ActionBtns > a{
+    text-decoration: none;
+    margin: 3px;
+}
+
+.VacationCard:hover > .ActionBtns{
+    visibility: visible;
+}
+
+.VacationCard > button{
+    position: absolute;
+    margin: 10px;
+}

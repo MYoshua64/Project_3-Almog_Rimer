@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "6bfea476-914f-4d6f-9bb4-990d58bb6d6c",
+		"name": "Vacation REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register New User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Maggie\",\r\n    \"lastName\": \"Simpson\",\r\n    \"mailAddress\": \"maggie_s@gmail.com\",\r\n    \"password\": \"Maggie12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Existing User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mailAddress\": \"lisa_s@gmail.com\",\r\n    \"password\": \"Lisa12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vacations",
+			"item": [
+				{
+					"name": "Get All Vacations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vacations/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vacations",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vacation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vacations/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vacations",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vacation Image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/vacations/images/639fdf8e-ebb3-4098-90ff-58fabe85f7aa.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vacations",
+								"images",
+								"639fdf8e-ebb3-4098-90ff-58fabe85f7aa.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Vacation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "destination",
+									"value": "New York",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "ckUEWvbf,je",
+									"type": "default"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-05-13",
+									"type": "default"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-05-18",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "450.60",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/almog/OneDrive/Pictures/RhanSyrus_Cropped.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vacations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vacations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vacation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vacationId",
+									"value": "53",
+									"type": "default"
+								},
+								{
+									"key": "destination",
+									"value": "New York",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "uejygfhldieskjndle.kn",
+									"type": "default"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-05-24",
+									"type": "default"
+								},
+								{
+									"key": "endDate",
+									"value": "2023-05-30",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "1200",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/almog/OneDrive/Pictures/RhanSyrus_Cropped.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/vacations/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"vacations",
+								"53"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User Follow From Vacation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/followers/user/3/vacation/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"followers",
+								"user",
+								"3",
+								"vacation",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJJZCI6NCwiZmlyc3ROYW1lIjoiTGlzYSIsImxhc3ROYW1lIjoiU2ltcHNvbiIsIm1haWxBZGRyZXNzIjoiNWJmYTNiODdmMzEwNzI5ODYwNGY4ZjkzZmE4ZDYzZGUyZmRkMmExM2IyNWZiOTk1ZDNkZGI0Y2Q5ZDM0YjBlMzIzMzRmNjU4OGMwZTRkYjE1N2ZiZjI2OTMyYWJhNjA3NzVkZTBlMmM4ZjI5NGI4MTk2OTIxNmFkNzdlNDZmOTAiLCJyb2xlSWQiOjJ9LCJpYXQiOjE2ODQ1MTA5NjYsImV4cCI6MTY4NDUyMTc2Nn0.G75WIwSmrQUNhqZP8zSlqgSlg6lZrXgcMkA4u7vkWQ4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

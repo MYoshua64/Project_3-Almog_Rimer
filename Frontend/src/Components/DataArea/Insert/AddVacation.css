@@ -1,0 +1,9 @@
+.AddVacation {
+	width: 400px;
+    box-sizing: border-box;
+}
+
+form > input, form > textarea, form > button{
+    width: 90%;
+    margin-bottom: 10px;
+}

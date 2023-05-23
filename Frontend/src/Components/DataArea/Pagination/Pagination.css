@@ -1,0 +1,7 @@
+.Pagination > .PageBtn{
+    background: none;
+    border: none;
+    transform: scale(2);
+    margin: auto 15px;
+    padding: 0px;
+}
