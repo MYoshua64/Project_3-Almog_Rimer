@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { RoleModel } from "../../../Models/RoleModel";
 import VacationModel from "../../../Models/VacationModel";
 import { authStore } from "../../../Redux/AuthState";
-import { followerStore } from "../../../Redux/FollowerState";
 import { vacationStore } from "../../../Redux/VacationState";
 import notifyService from "../../../Services/NotifyService";
 import vacationService from "../../../Services/VacationService";
