@@ -47,11 +47,7 @@ function VacationCard(props: VacationCardProps): JSX.Element {
       userId: authStore.getState().user.userId,
       vacationId: props.vacation.vacationId,
     });
-    // const newCount = props.vacation.doesFollow
-    //   ? followerCount - 1
-    //   : followerCount + 1;
     props.vacation.doesFollow = !props.vacation.doesFollow;
-    // setFollowerCount(newCount);
   }
 
   async function sendDeleteEvent() {

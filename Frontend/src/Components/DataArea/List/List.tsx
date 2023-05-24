@@ -79,7 +79,7 @@ function List(): JSX.Element {
   async function confirmDeleteVacation(vacationId: number) {
     try {
       const confirm = window.confirm(
-        `Are you sure you want to delete this vacation? (Id number: ${vacationId})`
+        `Are you sure you want to delete this vacation?`
       );
       if (confirm) {
         await vacationService.deleteVacation(vacationId);

@@ -9,6 +9,7 @@ import List from "../../DataArea/List/List";
 import UpdateVacation from "../../DataArea/UpdateVacation/UpdateVacation";
 import Home from "../../HomeArea/Home/Home";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import ReduxDataLoader from "../../DataArea/ReduxDataLoader/ReduxDataLoader";
 
 function Routing(): JSX.Element {
   return (
@@ -18,7 +19,9 @@ function Routing(): JSX.Element {
         path="/list"
         element={
           <RolesAuthRoute>
-            <List />
+            <ReduxDataLoader>
+              <List />
+            </ReduxDataLoader>
           </RolesAuthRoute>
         }
       />
@@ -44,7 +47,9 @@ function Routing(): JSX.Element {
         path={"/vacations/report"}
         element={
           <RolesAuthRoute permittedRoles={[RoleModel.Admin]}>
-            <FollowReport />
+            <ReduxDataLoader>
+              <FollowReport />
+            </ReduxDataLoader>
           </RolesAuthRoute>
         }
       />

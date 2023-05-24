@@ -1,25 +1,32 @@
-import { useEffect } from "react";
-import { authStore } from "../../../Redux/AuthState";
-import dataLoadService from "../../../Services/DataLoadService";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import followerService from "../../../Services/FollowerService";
+import notifyService from "../../../Services/NotifyService";
+import vacationService from "../../../Services/VacationService";
 
 interface ReduxDataLoaderProps {
   children: React.ReactNode;
 }
 
 function ReduxDataLoader({ children }: ReduxDataLoaderProps): JSX.Element {
+  const [loaded, setLoaded] = useState<boolean>(false);
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const unsubscribe = authStore.subscribe(() => {
-      if (authStore.getState().user) {
-        console.log("All data loaded!");
+    vacationService
+      .getAllVacations()
+      .then(() => {
+        followerService
+          .getAllFollowersByVacations()
+          .then(() => setLoaded(true));
+      })
+      .catch((err) => {
+        notifyService.error(err);
+        navigate("/home");
+      });
+  }, []);
 
-        dataLoadService.LoadAllData();
-      }
-    });
-
-    return () => unsubscribe();
-  });
-
-  return <div className="ReduxDataLoader">{children}</div>;
+  return <div className="ReduxDataLoader">{loaded && children}</div>;
 }
 
 export default ReduxDataLoader;
